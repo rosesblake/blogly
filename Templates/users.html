@@ -1,0 +1,17 @@
+{%extends 'base.html'%}{%block title%} User List {%endblock%} {%block content%}
+<h1>Users</h1>
+<ul id="user-list">
+  {%for user in users%}
+  <li id="{{user.id}}">
+    <a href="/{{user.id}}" method="POST">
+      {{user.first_name.capitalize()}} {{user.last_name.capitalize()}}
+    </a>
+  </li>
+  {%endfor%}
+</ul>
+<form action="/create-user" method="GET">
+  <button id="add-user-btn">
+    Add User
+  </button>
+</form>
+{%endblock%}
