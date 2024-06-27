@@ -8,4 +8,13 @@ content %}
 <form action="/delete-user/{{ user.id }}" method="POST">
   <button id="delete-profile-btn" type="submit">Delete</button>
 </form>
+<h2>Posts</h2>
+<ul>
+  {%for post in posts%}
+  <li><a href="/posts/{{post.id}}" method="GET">{{post.title}}</a></li>
+  {%endfor%}
+</ul>
+<form action="/users/{{user.id}}/posts/new" method="GET">
+  <button id="add-post-btn">Add Post</button>
+</form>
 {% endblock %}

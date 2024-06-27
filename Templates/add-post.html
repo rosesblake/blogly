@@ -1,0 +1,35 @@
+{%extends 'base.html'%} {%block title%} Add User {%endblock%} {%block content%}
+<h1>Create New Post</h1>
+<form action="/users/{{user.id}}/posts/new" method="POST">
+  <label for="title" id="title-label">Title</label>
+  <br />
+  <input
+    type="text"
+    id="title"
+    name="title"
+    placeholder="Enter Title"
+    required
+  />
+  <br />
+  <label for="content" id="content-label">Post Content</label>
+  <br />
+  <textarea
+    id="content"
+    name="content"
+    placeholder="Enter Post Content"
+    rows="5"
+    cols="20"
+    required
+  ></textarea>
+  <br />
+  <button id="cancel-post-btn" type="submit">Cancel</button>
+  <button id="create-post-btn" type="submit">Add</button>
+</form>
+
+<!-- trying out different ways to handle two button submissions, but not sure what is correct -->
+<script>
+  document.getElementById("cancel-post-btn").onclick = function () {
+    window.history.back();
+  };
+</script>
+{%endblock%}

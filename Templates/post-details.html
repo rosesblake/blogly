@@ -1,0 +1,18 @@
+{%extends 'base.html'%}{%block title%} Post Details {%endblock%} {%block
+content%}
+<h1>{{post.title}}</h1>
+<p>{{post.content}}</p>
+<footer>
+  <p>By {{post.user.first_name}} {{post.user.last_name}}</p>
+</footer>
+<!-- i need to know how to not have to make a form for each button  -->
+<form action="/{{post.user_id}}" method="GET">
+  <button type="submit" id="cancel-p-edit-btn">Cancel</button>
+</form>
+<form action="/posts/{{post.id}}/edit" method="GET">
+  <button type="submit" id="edit-post-btn">Edit</button>
+</form>
+<form action="/posts/{{post.id}}/delete" method="POST">
+  <button type="submit" id="delete-post-btn">Delete</button>
+</form>
+{%endblock%}
