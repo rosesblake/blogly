@@ -8,6 +8,8 @@
     id="title-edit"
     name="title-edit"
     placeholder="{{post.title}}"
+    value="{{post.title}}"
+    onfocus="this.value=''"
     required
   />
   <br />
@@ -19,11 +21,28 @@
     placeholder="{{post.content}}"
     rows="5"
     cols="20"
+    onfocus="this.value=''"
     required
-  ></textarea>
+  >
+{{post.content}}</textarea
+  >
   <br />
+  {%for tag in tags%}
+  <input
+    type="checkbox"
+    id="tag{{tag.id}}"
+    name="tags"
+    value="{{tag.id}}"
+    {%if
+    tag
+    in
+    post.tags%}checked{%endif%}
+  />
+  <label for="tag{{tag.id}}">{{tag.name}}</label>
+  <br />
+  {%endfor%}
   <button id="cancel-edit-post-btn" type="submit">Cancel</button>
-  <button id="submit-edit-p-btn" type="submit">Add</button>
+  <button id="submit-edit-p-btn" type="submit">Edit</button>
 </form>
 
 <!-- trying out different ways to handle two button submissions, but not sure what is correct -->

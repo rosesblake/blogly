@@ -2,8 +2,10 @@
 content%}
 <h1>{{post.title}}</h1>
 <p>{{post.content}}</p>
+
 <footer>
   <p>By {{post.user.first_name}} {{post.user.last_name}}</p>
+  <p><b>Tags:</b> {%for tag in tags%} {{tag.name}} {%endfor%}</p>
 </footer>
 <!-- i need to know how to not have to make a form for each button  -->
 <form action="/{{post.user_id}}" method="GET">
