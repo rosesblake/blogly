@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{%block title%}{%endblock%}</title>
+    {%block stylesheet%}
+    <link rel="stylesheet" href="/static/stylesheets/app.css" />
+    {%endblock%}
   </head>
   <nav>
-    <a id="home-btn" href="/">Home</a>
-    <a id="tag-nva-btn" href="/tags">Tags</a>
+    <a id="home-btn" href="/" class="nav-bar">Home</a>
+    <a id="tag-nva-btn" href="/tags" class="nav-bar">Tags</a>
   </nav>
   <body>
     {%block content%}{%endblock%}

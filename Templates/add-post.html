@@ -24,7 +24,7 @@
   <br />
   {%for tag in tags%}
   <input type="checkbox" id="tag{{tag.id}}" name="tags" value="{{tag.id}}" />
-  <label for="tag{{tag.id}}">{{tag.name}}</label>
+  <label for="tag{{tag.id}}" class="checkboxes">{{tag.name}}</label>
   <br />
   {%endfor%}
   <button id="cancel-post-btn" type="submit">Cancel</button>

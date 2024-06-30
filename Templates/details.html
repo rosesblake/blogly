@@ -2,10 +2,10 @@
 content %}
 <img src="{{ user.image_url }}" alt="" id="profile-image" />
 <h1>{{ user.first_name.capitalize() }} {{ user.last_name.capitalize() }}</h1>
-<form action="/edit-user/{{ user.id }}" method="GET">
+<form action="/edit-user/{{ user.id }}" method="GET" class="buttons">
   <button id="edit-profile-btn">Edit</button>
 </form>
-<form action="/delete-user/{{ user.id }}" method="POST">
+<form action="/delete-user/{{ user.id }}" method="POST" class="buttons">
   <button id="delete-profile-btn" type="submit">Delete</button>
 </form>
 <h2>Posts</h2>
